@@ -114,7 +114,30 @@ SETGATE(intr, 0,1,2,3);
 请分析 [list.h](https://github.com/chyyuu/ucore_lab/blob/master/labcodes/lab2/libs/list.h)内容中大致的含义，并能include这个文件，利用其结构和功能编写一个数据结构链表操作的小C程序
 - [x]  
 
-> 
+> list是一通用的双向链表，提供添加，删除，更改的操作。尝试建立了一种新的数据结构test，然后提供了其的添加，删除查找等操作，代码如下
+
+    #include "list.h"
+    struct test
+    {
+        list_entry *entry;
+        int data;
+        test()
+        {
+            entry = (list_entry*)malloc(sizeof(list_entry));
+            list_init(entry);
+        }
+    };
+
+    int main() {
+        test *t1 = new test();
+        test *t2 = new test();
+        list_add(t1->entry, t2->entry);
+        list_delete(t1->entry);
+        list_empty(t1->list);
+        test *next = (test*)(list_next(t1->entry));
+        test *prev = (test*)(list_prev(t2->prev));
+        return 0;
+    }
 
 ---
 
