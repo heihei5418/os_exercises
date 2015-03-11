@@ -36,11 +36,11 @@ lab1中完成了对哪些外设的访问？ (w2l2)
  ```
 
 > 在'clock.c'、'driver.c'和'console.c'的文件中有对以下外设的访问：
-  -IRQ_TIMER 时钟外设
-  -IRQ_KBD 键盘
-  -IRQ_COM1 串口
-  -IRQ_IDE1 IDE口1
-  -IRQ_IDE2 IDE口2
+  - IRQ_TIMER 时钟外设
+  - IRQ_KBD 键盘
+  - IRQ_COM1 串口
+  - IRQ_IDE1 IDE口1
+  - IRQ_IDE2 IDE口2
 
 lab1中的cprintf函数最终通过哪些外设完成了对字符串的输出？ (w2l2)
  ```
