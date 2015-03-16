@@ -43,9 +43,9 @@ NOTICE
 伙伴分配器的一个极简实现
 http://coolshell.cn/tag/buddy
 ```
-
+>
 学号为2012011360，实现的是最优匹配。由于我和梁盾同学是同一组，我和他用类似的方法分别实现了：
-- [最优匹配](./src/03-1-spoc/pmm.py)
+- [最优匹配](../src/03-1-spoc/pmm.py)
 - [最差匹配(由梁盾同学实现)](https://github.com/cjld/os_exercises/blob/master/all/src/03-1-spoc/pmm.py)
 - [测试程序(由梁盾同学实现)](./src/03-1-spoc/test.py)
 
@@ -68,6 +68,7 @@ alloc mem size : 56/417
 ```
 
 在多次实验中，最优匹配的内存分配方法十分不稳定，有时候内存利用率高达80%，有时候则低至20%。
+
 --- 
 
 ## 扩展思考题
