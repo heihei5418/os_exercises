@@ -47,7 +47,7 @@ http://coolshell.cn/tag/buddy
 学号为2012011360，实现的是最优匹配。由于我和梁盾同学是同一组，我和他用类似的方法分别实现了：
 - [最优匹配](../src/03-1-spoc/pmm.py)
 - [最差匹配(由梁盾同学实现)](https://github.com/cjld/os_exercises/blob/master/all/src/03-1-spoc/pmm.py)
-- [测试程序(由梁盾同学实现)](./src/03-1-spoc/test.py)
+- [测试程序(由梁盾同学实现)](../src/03-1-spoc/test.py)
 
 在`pmm.py`中，我实现了一个存储所有内存块的list，这个list按照小空闲区域~大空闲区域~非空闲区域的顺序维护，每次分配一块空间时，从list头开始遍历，直到找到一个能够分配的空闲块。释放时，如果该区域前后还有空闲空间，则合并。
 
