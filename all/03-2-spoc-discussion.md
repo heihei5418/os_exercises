@@ -130,7 +130,7 @@ Virtual Address 390e:
   --> pde index:0xe  pde contents:(valid 0, pfn 0x7f)
       --> Fault (page directory entry not valid)
 
-Virtual Address 948b:
+Virtual Address 748b:
   --> pde index:0x1d  pde contents:(valid 1, pt 0x0)
     --> pte index:0x4  pte contents:(valid 0, pfn 0x7f)
       --> Fault (page table entry not valid)
