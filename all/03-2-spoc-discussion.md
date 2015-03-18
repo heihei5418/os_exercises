@@ -50,7 +50,7 @@ VALID==1表示，表示映射存在；VALID==0表示，表示映射不存在。
 PFN6..0:页帧号
 PT6..0:页表的物理基址>>5
 ```
-在[物理内存模拟数据文件](./03-2-spoc-testdata.md)中，给出了4KB物理内存空间的值，请回答下列虚地址是否有合法对应的物理内存，请给出对应的pde index, pde contents, pte index, pte contents。
+在[物理内存模拟数据文件](https://github.com/xuyongjiande/os_exercises/blob/master/all/03-2-spoc-testdata.md)中，给出了4KB物理内存空间的值，请回答下列虚地址是否有合法对应的物理内存，请给出对应的pde index, pde contents, pte index, pte contents。
 ```
 Virtual Address 6c74
 Virtual Address 6b22
