@@ -23,7 +23,7 @@ NOTICE
 
 > 根据《深入理解计算机系统》第二章和网上查阅的资料，目前的64bit CPU（主要讨论X86-64架构），虚拟地址总线为48bit，物理地址总线根据具体CPU型号的不同，主要有36bit和40bit。也就是说，64bit CPU支持的虚拟地址大小为256T，支持的物理内存大小根据CPU型号的不同有2^36和2^40等不同限制。
 
-> 目前的主流64bit COU采用四级标签页表。每级分别有9个位，首先查询PML4表，根据其索引到的页表项到了DirectoryPtr表。
+> 目前的主流64bit COU采用四级标签页表。每级分别有9个位，首先查询PML4表，根据其索引到的页表项到了DirectoryPtr表，
 然后继续到Directory Entry表和Table Entry表，得到的帧号加上最后11位的offset构成了物理地址。完成了虚拟地址-->物理地址的映射。
 
 ## 小组思考题
@@ -31,9 +31,8 @@ NOTICE
 
 （1）(spoc) 某系统使用请求分页存储管理，若页在内存中，满足一个内存请求需要150ns。若缺页率是10%，为使有效访问时间达到0.5ms,求不在内存的页面的平均访问时间。请给出计算步骤。 
 
-- [x]  
 
-> 500=0.9\*150+0.1\*x
+> 500=0.9\*150+0.1\*x，解得x=3.65ms，即不在内存的页面的平均访问时间为3.65ms。
 
 （2）(spoc) 有一台假想的计算机，页大小（page size）为32 Bytes，支持32KB的虚拟地址空间（virtual address space）,有4KB的物理内存空间（physical memory），采用二级页表，一个页目录项（page directory entry ，PDE）大小为1 Byte,一个页表项（page-table entries
 PTEs）大小为1 Byte，1个页目录表大小为32 Bytes，1个页表大小为32 Bytes。页目录基址寄存器（page directory base register，PDBR）保存了页目录表的物理地址（按页对齐）。
