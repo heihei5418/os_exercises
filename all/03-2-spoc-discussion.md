@@ -89,7 +89,7 @@ Virtual Address 7268:
 Virtual Address 6c74:
   --> pde index:0x1b  pde contents:(valid 1, pt 0x20)
     --> pte index:0x3  pte contents:(valid 1, pfn 0x61)
-      --> Translates to Physical Address 0xc34 --> Value: 0x06
+      --> Translates to Physical Address 0xc34 --> Value: 0x6
 
 Virtual Address 6b22:
   --> pde index:0x1a  pde contents:(valid 1, pt 0x52)
