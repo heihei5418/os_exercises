@@ -129,9 +129,58 @@ va 0xce6c3f32, pa 0x007d4f32
 va 0xcd82c07c, pa 0x0c20907c, pde_idx 0x00000336, pde_ctx  0x00037003, pte_idx 0x0000002c, pte_ctx  0x0000c20b
 ```
 
-- [x]  
+> 代码如下:
 
-> 
+```
+#include <iostream>
+#include <cstdio>
+using namespace std;
+
+void translate(unsigned int va, unsigned int pa) {
+    printf("va 0x%08x, pa 0x%08x, ", va, pa);
+    unsigned int pde_idx = (va & 0xcffc0000) >> 22;
+    printf("pde_idx 0x%08x, ", pde_idx);
+    unsigned int no = pde_idx - 0x300 + 1;
+    unsigned int pde_ctx = (no << 12)+ 0x3;
+    printf("pde_ctx 0x%08x, ", pde_ctx);
+    unsigned int pte_idx = (va & 0x003ff000) >> 12;
+    printf("pte_idx 0x%08x, ", pte_idx);
+    unsigned int pte_ctx = (pa & 0xfffff000) | (0x3);
+    printf("pte_ctx 0x%08x\n", pte_ctx);
+}
+
+int main() {
+    unsigned int va, pa;
+    while (scanf("va 0x%x, pa 0x%x\n", &va, &pa) != EOF) {
+        translate(va, pa);
+    }
+    return 0;
+}
+```
+
+输出结果为:
+```
+va 0xc2265b1f, pa 0x0d8f1b1f, pde_idx 0x00000308, pde_ctx 0x00009003, pte_idx 0x
+00000265, pte_ctx 0x0d8f1003
+va 0xcc386bbc, pa 0x0414cbbc, pde_idx 0x00000330, pde_ctx 0x00031003, pte_idx 0x
+00000386, pte_ctx 0x0414c003
+va 0xc7ed4d57, pa 0x07311d57, pde_idx 0x0000031f, pde_ctx 0x00020003, pte_idx 0x
+000002d4, pte_ctx 0x07311003
+va 0xca6cecc0, pa 0x0c9e9cc0, pde_idx 0x00000329, pde_ctx 0x0002a003, pte_idx 0x
+000002ce, pte_ctx 0x0c9e9003
+va 0xc18072e8, pa 0x007412e8, pde_idx 0x00000306, pde_ctx 0x00007003, pte_idx 0x
+00000007, pte_ctx 0x00741003
+va 0xcd5f4b3a, pa 0x06ec9b3a, pde_idx 0x00000335, pde_ctx 0x00036003, pte_idx 0x
+000001f4, pte_ctx 0x06ec9003
+va 0xcc324c99, pa 0x0008ac99, pde_idx 0x00000330, pde_ctx 0x00031003, pte_idx 0x
+00000324, pte_ctx 0x0008a003
+va 0xc7204e52, pa 0x0b8b6e52, pde_idx 0x0000031c, pde_ctx 0x0001d003, pte_idx 0x
+00000204, pte_ctx 0x0b8b6003
+va 0xc3a90293, pa 0x0f1fd293, pde_idx 0x0000030e, pde_ctx 0x0000f003, pte_idx 0x
+00000290, pte_ctx 0x0f1fd003
+va 0xce6c3f32, pa 0x007d4f32, pde_idx 0x00000339, pde_ctx 0x0003a003, pte_idx 0x
+000002c3, pte_ctx 0x007d4003
+```
 
 ---
 
