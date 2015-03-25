@@ -148,6 +148,30 @@ Virtual Address 1e6f(0 001_11 10_011 0_1111):
       --> To Disk Sector Address 0x2cf(0001011001111) --> Value: 1c
 ```
 
+>编写一个[C++程序](../src/04-1-spoc/AddrTrans.cpp)处理，结果如下：
+
+```
+Virtual Address 6653:
+  --> pde index:0x19 pde contents:(valid 0, pfn 0x7f)
+      --> Fault (page directory entry not valid)
+Virtual Address 1c13:
+  --> pde index:0x7 pde contents:(valid 1, pfn 0x3d)
+    --> pte index:0x0 pte contents:(valid 1, pfn 0x76)
+       --> Translates to Physical Address 0xed3 --> Value: 0x12
+Virtual Address 6890:
+  --> pde index:0x1a pde contents:(valid 0, pfn 0x7f)
+      --> Fault (page directory entry not valid)
+Virtual Address af6:
+  --> pde index:0x2 pde contents:(valid 1, pfn 0x21)
+    --> pte index:0x17 pte contents:(valid 0, pfn 0x7f)
+      --> Translates to Disk Sector Address 0xff6 -->Value: 0x3
+Virtual Address 1e6f:
+  --> pde index:0x7 pde contents:(valid 1, pfn 0x3d)
+    --> pte index:0x13 pte contents:(valid 0, pfn 0x16)
+      --> Translates to Disk Sector Address 0x2cf -->Value: 0x1c
+
+```
+
 ## 扩展思考题
 ---
 (1)请分析原理课的缺页异常的处理流程与lab3中的缺页异常的处理流程（分析粒度到函数级别）的异同之处。
