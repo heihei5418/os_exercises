@@ -35,6 +35,31 @@ time ./goodlocality
 ```
 可以看到其执行时间。
 
+> 编写两个C++程序，分别是按照题目中样例编写的[goodlocality](../src/04-1-spoc/goodlocality.cpp)
+和调换`i、j`顺序修改而成的[badlocality](../src/04-1-spoc/badlocality.cpp)，分别在linux下编译并测试运行时间，得到如下结果：
+
+```
+time ./goodlocality
+
+10485760 count computing over!
+
+real 0m0.057s
+user 0m0.034s
+sys  0m0.004s
+```
+
+```
+time ./badlocality
+
+10485760 count computing over!
+
+real 0m0.206s
+user 0m0.153s
+sys  0m0.014s
+```
+
+> 可以看到，`badlocality`的运行时间大约是`goodlocality`的4倍，因为后者只会发生`10*1024`次缺页，而前者则会发生`10*1024*1024`次缺页。
+
 ## 小组思考题目
 ----
 
