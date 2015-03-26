@@ -164,12 +164,11 @@ Virtual Address 6890:
 Virtual Address af6:
   --> pde index:0x2 pde contents:(valid 1, pfn 0x21)
     --> pte index:0x17 pte contents:(valid 0, pfn 0x7f)
-      --> Translates to Disk Sector Address 0xff6 -->Value: 0x3
+      --> Fault (page not in memory nor in disk)
 Virtual Address 1e6f:
   --> pde index:0x7 pde contents:(valid 1, pfn 0x3d)
     --> pte index:0x13 pte contents:(valid 0, pfn 0x16)
       --> Translates to Disk Sector Address 0x2cf -->Value: 0x1c
-
 ```
 
 ## 扩展思考题
