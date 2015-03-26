@@ -33,6 +33,11 @@ void consult(int temp, ofstream& fout)
 
     if (valid == 0)
     {
+        if (pfn == 127)
+        {
+            fout << "      --> Fault (page not in memory nor in disk)" << endl;
+            return;
+        }
         fout << "      --> Translates to Disk Sector Address 0x" << phiAddr << " -->Value: 0x" << disk[phiAddr] << endl;
         return;
     }
@@ -52,9 +57,6 @@ int main()
     while (fin >> temp)
         disk.push_back(temp);
     fin.close();
-
-    for (int i = 0; i < mem.size(); i++)
-        cout << mem[i] << ' ';
 
     fin.open("in.txt");
     ofstream fout;
