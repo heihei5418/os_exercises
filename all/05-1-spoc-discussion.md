@@ -48,7 +48,7 @@ NOTICE
 
 ## SPOC小组思考题
 
-(1) (spoc)设计一个简化的进程管理子系统，可以管理并调度如下简化进程。给出了[参考代码](https://github.com/chyyuu/ucore_lab/blob/master/related_info/lab4/process-concept-homework.py)，请理解代码，并完成＂YOUR CODE"部分的内容．　可2个人一组
+(1) (spoc)设计一个简化的进程管理子系统，可以管理并调度如下简化进程。给出了[参考代码](https://github.com/chyyuu/ucore_lab/blob/master/related_info/lab4/process-concept-homework.py)，请理解代码，并完成＂YOUR CODE"部分的内容。可2个人一组
 
 ### 进程的状态 
 
@@ -77,11 +77,11 @@ PROC_STATE = 'proc_state_'
 ```
  - 当前进程 curr_proc 
  - 进程列表：proc_info是就绪进程的队列（list），
- - 在命令行（如下所示）需要说明每进程的行为特征：（１）使用CPU ;(2)等待I/O
+ - 在命令行（如下所示）需要说明每进程的行为特征：(1)使用CPU ;(2)等待I/O
 ```
    -l PROCESS_LIST, --processlist= X1:Y1,X2:Y2,...
    X 是进程的执行指令数; 
-   Ｙ是执行CPU的比例(0..100) ，如果是100，表示不会发出yield操作
+   Y 是执行CPU的比例(0..100) ，如果是100，表示不会发出yield操作
 ```
  - 进程切换行为：系统决定何时(when)切换进程:进程结束或进程发出yield请求
 
